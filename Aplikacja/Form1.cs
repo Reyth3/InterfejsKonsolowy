@@ -19,7 +19,13 @@ namespace Aplikacja
             var login = new LogInForm();
             login.ShowDialog();
 
+            if (!login.Sukces)
+                Application.Exit();
             InitializeComponent();
+
+            if (login.Rola != 'A')
+                toolStripMenuItem3.Visible = false;
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
